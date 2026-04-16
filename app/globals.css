@@ -27,15 +27,8 @@ html, body {
   padding: 32px 20px 48px;
 }
 
-h1 {
-  margin: 0 0 4px;
-  font-size: 2rem;
-}
-
-.subtitle {
-  margin: 0 0 24px;
-  color: var(--muted);
-}
+h1 { margin: 0 0 4px; font-size: 2rem; }
+.subtitle { margin: 0 0 24px; color: var(--muted); }
 
 .controls {
   display: grid;
@@ -64,12 +57,11 @@ h1 {
   padding: 10px 12px;
   font-size: 1rem;
   outline: none;
+  font-family: inherit;
 }
 
 .field input:focus,
-.field select:focus {
-  border-color: var(--accent);
-}
+.field select:focus { border-color: var(--accent); }
 
 button {
   background: var(--accent-strong);
@@ -81,6 +73,7 @@ button {
   font-weight: 600;
   cursor: pointer;
   height: 42px;
+  font-family: inherit;
 }
 
 button:hover { background: var(--accent); }
@@ -91,7 +84,6 @@ button:disabled { opacity: 0.6; cursor: not-allowed; }
   min-height: 1.4em;
   color: var(--muted);
 }
-
 .status.error { color: var(--danger); }
 
 .result {
@@ -109,10 +101,7 @@ button:disabled { opacity: 0.6; cursor: not-allowed; }
   margin-bottom: 16px;
 }
 
-.result-header h2 {
-  margin: 0;
-  font-size: 1.25rem;
-}
+.result-header h2 { margin: 0; font-size: 1.25rem; }
 
 .badge {
   background: var(--panel-2);
@@ -138,15 +127,8 @@ button:disabled { opacity: 0.6; cursor: not-allowed; }
   gap: 4px;
 }
 
-.card .label {
-  color: var(--muted);
-  font-size: 0.8rem;
-}
-
-.card .value {
-  font-size: 1.1rem;
-  font-weight: 600;
-}
+.card .label { color: var(--muted); font-size: 0.8rem; }
+.card .value { font-size: 1.1rem; font-weight: 600; }
 
 .footer {
   margin-top: 28px;
@@ -154,7 +136,6 @@ button:disabled { opacity: 0.6; cursor: not-allowed; }
   font-size: 0.85rem;
   text-align: center;
 }
-
 .footer a { color: var(--accent); }
 
 @media (max-width: 600px) {

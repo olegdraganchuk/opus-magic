@@ -1,27 +1,39 @@
-# Weather App
+# Weather App (Next.js)
 
-A tiny static weather app: pick a location and a data provider.
+Single-page weather app built with **Next.js 15 (App Router)**. Pick a location
+and a free, no-API-key data provider.
 
 ## Providers
 
-Both are free and require **no API key**:
+1. **[Open-Meteo](https://open-meteo.com/)** — geocodes the city, then fetches
+   current conditions from the forecast API.
+2. **[wttr.in](https://wttr.in/)** — queried directly via
+   `https://wttr.in/<location>?format=j1`.
 
-1. **[Open-Meteo](https://open-meteo.com/)** — uses the geocoding API to resolve
-   the city name, then the forecast API for current conditions.
-2. **[wttr.in](https://wttr.in/)** — queried directly with the location string
-   via `https://wttr.in/<location>?format=j1`.
+The provider calls live in `lib/providers.ts` and are invoked from an Edge API
+route at `app/api/weather/route.ts`. The client UI is in
+`app/weather-client.tsx`.
 
-## Run
-
-It's a static page — open `index.html` in a browser, or serve the folder:
+## Local development
 
 ```sh
-python3 -m http.server 8000
-# then visit http://localhost:8000
+npm install
+npm run dev
+# http://localhost:3000
 ```
 
-## Files
+## Deploy to Vercel
 
-- `index.html` — markup and form controls
-- `styles.css` — styling
-- `app.js` — provider logic and rendering
+The repo is already wired for Vercel — pick whichever path you prefer:
+
+**Option 1 — One click from GitHub:**
+go to <https://vercel.com/new>, import this repo, and click **Deploy**. No env
+vars are required.
+
+**Option 2 — From your machine:**
+
+```sh
+npm i -g vercel
+vercel login
+vercel --prod
+```
