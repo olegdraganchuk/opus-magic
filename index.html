@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Weather App</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="app">
+    <h1>Weather</h1>
+    <p class="subtitle">Pick a location and a data provider.</p>
+
+    <form id="weather-form" class="controls">
+      <label class="field">
+        <span>Location</span>
+        <input
+          id="location"
+          type="text"
+          placeholder="e.g. London, Tokyo, New York"
+          autocomplete="off"
+          required
+        />
+      </label>
+
+      <label class="field">
+        <span>Provider</span>
+        <select id="provider">
+          <option value="open-meteo">Open-Meteo (open-meteo.com)</option>
+          <option value="wttr">wttr.in</option>
+        </select>
+      </label>
+
+      <button type="submit" id="submit-btn">Get weather</button>
+    </form>
+
+    <section id="status" class="status" aria-live="polite"></section>
+
+    <section id="result" class="result" hidden>
+      <header class="result-header">
+        <h2 id="result-location"></h2>
+        <span id="result-provider" class="badge"></span>
+      </header>
+      <div class="result-grid">
+        <div class="card">
+          <span class="label">Temperature</span>
+          <span id="result-temp" class="value"></span>
+        </div>
+        <div class="card">
+          <span class="label">Feels like</span>
+          <span id="result-feels" class="value"></span>
+        </div>
+        <div class="card">
+          <span class="label">Conditions</span>
+          <span id="result-conditions" class="value"></span>
+        </div>
+        <div class="card">
+          <span class="label">Humidity</span>
+          <span id="result-humidity" class="value"></span>
+        </div>
+        <div class="card">
+          <span class="label">Wind</span>
+          <span id="result-wind" class="value"></span>
+        </div>
+        <div class="card">
+          <span class="label">Observed</span>
+          <span id="result-time" class="value"></span>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <p>
+        Data from
+        <a href="https://open-meteo.com/" target="_blank" rel="noopener">Open-Meteo</a>
+        and
+        <a href="https://wttr.in/" target="_blank" rel="noopener">wttr.in</a>.
+        Both are free and require no API key.
+      </p>
+    </footer>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
